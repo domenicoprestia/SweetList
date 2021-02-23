@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: radial-gradient(ellipse at center, #45b397, #50455c);
+    height: 100vh;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.todo{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container{
+    background: #ffff;
+    width: 100%;
+    border-radius: 20px;
+    padding-bottom: 40px;
+}
+
+.wrap{
+    width: 80%;
+    margin: auto;
+}
+
+.todo_header{
+    background-image: linear-gradient(to right bottom, rgba(32, 32, 34, 0.5),
+     rgba(37, 99, 96, 0.8)),
+     url("../imgs/getshitdone.jpg");
+     background-size: cover;
+     padding: 50px;
+     color: white;
+     border-top-right-radius: 10px;
+     border-top-left-radius: 10px;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+.todo_header .overflow h1{
+    margin:0;
+    animation: slideInDate 0.5s ease both;
+}
+.todo_header .overflow #todaysDate{
+    transform: translateX(-96px);
+    display: block;
+    animation: slideInDate 0.4s 0.1s ease both;
+}
+
+.todo_input{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px;
+    background: white;
+    transform: translateY(-40%)
+}
+
+.todo_input input{
+    width: calc(100% - 40px);
+    padding: 10px;
+    outline: none;
+    display: inline-block;
+    height: 40px;
+}
+.todo_input input::placeholder{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.todo_input .todo_btn{
+    display: inline-block;
+    border: none;
+    padding: 12px;
+    background-color: cadetblue;
+    text-transform:uppercase;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    height: 40px;
+}
+
+.todo_list li {
+    display: flex;
+    align-items: center;
+    background-color: #655e75;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.todo_list .text {
+    margin: auto;
+}
+.todo_list .options{
+    margin-right: -115px;
+    transition: 0.3s ease;
+}
+
+.todo_list li:hover .options{
+    margin-right: 0;
+}
+
+.todo_list .options span{
+    height: 50px;
+    width: 40px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin: -3px;
+    background-color: #000;
+    transition: background-color 0.3s;
+    line-height: 45px;
+}
+
+.todo_list .options span:hover:nth-child(1)
+{
+    background-color: aquamarine;
+}
+.todo_list .options span:hover:nth-child(2)
+{
+    background-color: coral;
+}
+.todo_list .options span:hover:nth-child(3)
+{
+    background-color: crimson;
+}
+
+#alert{
+    font-size: small;
+    color: cadetblue;
+    animation: slideInAlert 0.4s 0.1s ease both;
+    margin-bottom: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.bounceIn{
+    animation: slideInToDo 0.3s ease both;
+    margin: 20px;
+    
+}
+
+
+.bounceOutRight {
+    -webkit-animation-name: bounceOutRight;
+    animation-name: bounceOutRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes bounceOutRight {
+    20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+    }
+    100% {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+    }
+}
+
+.completed{
+    text-decoration: line-through;
+}
+.bounceOutDown {
+    -webkit-animation-name: bounceOutDown;
+    animation-name: bounceOutDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes bounceOutDown {
+    20% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+    }
+    40%, 45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+    }
+    100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+    }
+    }
+          .bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes bounceOutUp {
+  20% {
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+  }
+  40%, 45% {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+  }
+  100% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -2000px, 0);
+  transform: translate3d(0, -2000px, 0);
+  }
+  }
+  @keyframes bounceOutUp {
+  20% {
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+  }
+  40%, 45% {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+  }
+  100% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -2000px, 0);
+  transform: translate3d(0, -2000px, 0);
+  }
+  }
+
+
+
+    @keyframes bounceOutDown {
+    20% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+    }
+    40%, 45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+    }
+    100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+    }
+    } 
+  
+  
+  
+    @keyframes bounceOutRight {
+    20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+    }
+    100% {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+    }
+} 
+  
+
+  
+
+@keyframes slideInDate{
+    0%
+    {
+        transform: translateX(-249px);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInAlert{
+    0%
+    {
+        transform: translateY(1250px);
+    }
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInToDo{
+    0%
+    {
+        transform: translateX(-250px);
+    }
+    100%
+    {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slideOutToDo
+{
+    0%{
+        transform: translateX(0px);
+    }
+    100%
+    {
+        transform: translateX(250px);
+    }
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  @keyframes fadeRev {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+
+
